@@ -1,0 +1,120 @@
+2021-09-15/15:29:46		Start of Validation on files for prediction!!
+2021-09-15/15:29:49		Raw Data Validation Complete!!
+2021-09-15/15:29:49		Starting Data Transforamtion!!
+2021-09-15/15:29:55		DataTransformation Completed!!!
+2021-09-15/15:29:55		Creating Prediction_Database and tables on the basis of given schema!!!
+2021-09-15/15:29:58		Table creation Completed!!
+2021-09-15/15:29:58		Insertion of Data into Table started!!!!
+2021-09-15/15:30:03		Insertion in Table completed!!!
+2021-09-15/15:30:03		Deleting Good Data Folder!!!
+2021-09-15/15:30:03		Good_Data folder deleted!!!
+2021-09-15/15:30:03		Moving bad files to Archive and deleting Bad_Data folder!!!
+2021-09-15/15:30:03		Bad files moved to archive!! Bad folder Deleted!!
+2021-09-15/15:30:03		Validation Operation completed!!
+2021-09-15/15:30:03		Extracting csv file from table
+2021-09-15/15:30:03		Start of Prediction
+2021-09-15/15:30:03		Entered the get_data method of the Data_Getter class
+2021-09-15/15:30:03		Data Load Successful.Exited the get_data method of the Data_Getter class
+2021-09-15/15:30:03		Entered the is_null_present method of the Preprocessor class
+2021-09-15/15:30:03		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2021-09-15/15:30:03		Entered the impute_missing_values method of the Preprocessor class
+2021-09-15/15:30:04		Imputing missing values Successful. Exited the impute_missing_values method of the Preprocessor class
+2021-09-15/15:30:04		Entered the get_columns_with_zero_std_deviation method of the Preprocessor class
+2021-09-15/15:30:05		Column search for Standard Deviation of Zero Successful. Exited the get_columns_with_zero_std_deviation method of the Preprocessor class
+2021-09-15/15:30:05		Entered the remove_columns method of the Preprocessor class
+2021-09-15/15:30:05		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2021-09-15/15:30:05		Entered the load_model method of the File_Operation class
+2021-09-15/15:30:05		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2021-09-15/15:30:05		Entered the find_correct_model_file method of the File_Operation class
+2021-09-15/15:30:05		Exited the find_correct_model_file method of the Model_Finder class.
+2021-09-15/15:30:05		Entered the load_model method of the File_Operation class
+2021-09-15/15:30:05		Model File RandomForest0 loaded. Exited the load_model method of the Model_Finder class
+2021-09-15/15:30:05		Entered the find_correct_model_file method of the File_Operation class
+2021-09-15/15:30:05		Exited the find_correct_model_file method of the Model_Finder class.
+2021-09-15/15:30:05		Entered the load_model method of the File_Operation class
+2021-09-15/15:30:05		Model File RandomForest1 loaded. Exited the load_model method of the Model_Finder class
+2021-09-15/15:30:05		Entered the find_correct_model_file method of the File_Operation class
+2021-09-15/15:30:05		Exited the find_correct_model_file method of the Model_Finder class.
+2021-09-15/15:30:05		Entered the load_model method of the File_Operation class
+2021-09-15/15:30:05		Model File RandomForest2 loaded. Exited the load_model method of the Model_Finder class
+2021-09-15/15:30:05		End of Prediction
+2021-09-16/21:20:39		Start of Validation on files for prediction!!
+2021-09-16/21:20:42		Raw Data Validation Complete!!
+2021-09-16/21:20:42		Starting Data Transforamtion!!
+2021-09-16/21:20:48		DataTransformation Completed!!!
+2021-09-16/21:20:48		Creating Prediction_Database and tables on the basis of given schema!!!
+2021-09-16/21:20:52		Table creation Completed!!
+2021-09-16/21:20:52		Insertion of Data into Table started!!!!
+2021-09-16/21:20:58		Insertion in Table completed!!!
+2021-09-16/21:20:58		Deleting Good Data Folder!!!
+2021-09-16/21:20:58		Good_Data folder deleted!!!
+2021-09-16/21:20:58		Moving bad files to Archive and deleting Bad_Data folder!!!
+2021-09-16/21:20:58		Bad files moved to archive!! Bad folder Deleted!!
+2021-09-16/21:20:58		Validation Operation completed!!
+2021-09-16/21:20:58		Extracting csv file from table
+2021-09-16/21:20:58		Start of Prediction
+2021-09-16/21:20:58		Entered the get_data method of the Data_Getter class
+2021-09-16/21:20:58		Data Load Successful.Exited the get_data method of the Data_Getter class
+2021-09-16/21:20:58		Entered the is_null_present method of the Preprocessor class
+2021-09-16/21:20:58		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2021-09-16/21:20:58		Entered the impute_missing_values method of the Preprocessor class
+2021-09-16/21:20:59		Imputing missing values Successful. Exited the impute_missing_values method of the Preprocessor class
+2021-09-16/21:20:59		Entered the get_columns_with_zero_std_deviation method of the Preprocessor class
+2021-09-16/21:21:00		Column search for Standard Deviation of Zero Successful. Exited the get_columns_with_zero_std_deviation method of the Preprocessor class
+2021-09-16/21:21:00		Entered the remove_columns method of the Preprocessor class
+2021-09-16/21:21:00		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2021-09-16/21:21:00		Entered the load_model method of the File_Operation class
+2021-09-16/21:21:00		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2021-09-16/21:21:00		Entered the find_correct_model_file method of the File_Operation class
+2021-09-16/21:21:00		Exited the find_correct_model_file method of the Model_Finder class.
+2021-09-16/21:21:00		Entered the load_model method of the File_Operation class
+2021-09-16/21:21:00		Model File RandomForest0 loaded. Exited the load_model method of the Model_Finder class
+2021-09-16/21:21:00		Entered the find_correct_model_file method of the File_Operation class
+2021-09-16/21:21:00		Exited the find_correct_model_file method of the Model_Finder class.
+2021-09-16/21:21:00		Entered the load_model method of the File_Operation class
+2021-09-16/21:21:00		Model File RandomForest1 loaded. Exited the load_model method of the Model_Finder class
+2021-09-16/21:21:00		Entered the find_correct_model_file method of the File_Operation class
+2021-09-16/21:21:00		Exited the find_correct_model_file method of the Model_Finder class.
+2021-09-16/21:21:00		Entered the load_model method of the File_Operation class
+2021-09-16/21:21:00		Model File RandomForest2 loaded. Exited the load_model method of the Model_Finder class
+2021-09-16/21:21:00		End of Prediction
+2021-09-20/17:39:02		Start of Validation on files for prediction!!
+2021-09-20/17:39:06		Raw Data Validation Complete!!
+2021-09-20/17:39:06		Starting Data Transforamtion!!
+2021-09-20/17:39:13		DataTransformation Completed!!!
+2021-09-20/17:39:13		Creating Prediction_Database and tables on the basis of given schema!!!
+2021-09-20/17:39:17		Table creation Completed!!
+2021-09-20/17:39:17		Insertion of Data into Table started!!!!
+2021-09-20/17:39:22		Insertion in Table completed!!!
+2021-09-20/17:39:22		Deleting Good Data Folder!!!
+2021-09-20/17:39:22		Good_Data folder deleted!!!
+2021-09-20/17:39:22		Moving bad files to Archive and deleting Bad_Data folder!!!
+2021-09-20/17:39:22		Bad files moved to archive!! Bad folder Deleted!!
+2021-09-20/17:39:22		Validation Operation completed!!
+2021-09-20/17:39:22		Extracting csv file from table
+2021-09-20/17:39:23		Start of Prediction
+2021-09-20/17:39:23		Entered the get_data method of the Data_Getter class
+2021-09-20/17:39:23		Data Load Successful.Exited the get_data method of the Data_Getter class
+2021-09-20/17:39:23		Entered the is_null_present method of the Preprocessor class
+2021-09-20/17:39:23		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2021-09-20/17:39:23		Entered the impute_missing_values method of the Preprocessor class
+2021-09-20/17:39:24		Imputing missing values Successful. Exited the impute_missing_values method of the Preprocessor class
+2021-09-20/17:39:24		Entered the get_columns_with_zero_std_deviation method of the Preprocessor class
+2021-09-20/17:39:25		Column search for Standard Deviation of Zero Successful. Exited the get_columns_with_zero_std_deviation method of the Preprocessor class
+2021-09-20/17:39:25		Entered the remove_columns method of the Preprocessor class
+2021-09-20/17:39:25		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2021-09-20/17:39:25		Entered the load_model method of the File_Operation class
+2021-09-20/17:39:25		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2021-09-20/17:39:25		Entered the find_correct_model_file method of the File_Operation class
+2021-09-20/17:39:25		Exited the find_correct_model_file method of the Model_Finder class.
+2021-09-20/17:39:25		Entered the load_model method of the File_Operation class
+2021-09-20/17:39:25		Model File RandomForest0 loaded. Exited the load_model method of the Model_Finder class
+2021-09-20/17:39:25		Entered the find_correct_model_file method of the File_Operation class
+2021-09-20/17:39:25		Exited the find_correct_model_file method of the Model_Finder class.
+2021-09-20/17:39:25		Entered the load_model method of the File_Operation class
+2021-09-20/17:39:25		Model File RandomForest1 loaded. Exited the load_model method of the Model_Finder class
+2021-09-20/17:39:25		Entered the find_correct_model_file method of the File_Operation class
+2021-09-20/17:39:25		Exited the find_correct_model_file method of the Model_Finder class.
+2021-09-20/17:39:25		Entered the load_model method of the File_Operation class
+2021-09-20/17:39:25		Model File RandomForest2 loaded. Exited the load_model method of the Model_Finder class
+2021-09-20/17:39:25		End of Prediction

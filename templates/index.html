@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Prediction Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+		body{font-family: 'Sigmar One', cursive;font-weight:700;font-size: larger;}
+		h1,h2,h3,h4,h5,h6{font-family: 'Sigmar One', cursive;font-weight:500;}
+		.title{color:#e72bde;}
+		#fetch{cursor:pointer;}
+		#stopfetch{cursor:pointer;}
+		#fetch:hover,#fetch:active,#fetch:focus,#stopfetch:hover,#stopfetch:active,#stopfetch:focus{background-color:#ff7f00;border-color:#ff7f00;}
+		footer.footer{padding-top:1rem;padding-bottom:1rem;background-color: #e3e8ed!important;}
+		footer a{color:#000;font-weight:600;text-decoration:none;}
+		footer li a:hover{color:rgb(255, 0, 255);}
+		footer li i{color:rgb(255, 0, 255);}
+		footer li i:hover{color:rgb(255, 0, 255);}
+		.navbar-light .navbar-brand{color: rgba(0,0,0,.9);}
+		.navbar-light .navbar-brand {margin-left: auto;margin-right: auto;}
+		.container-fluid{width:90%;}
+		.load{
+			height:100%;
+			background-color:#ffffff9d;
+			position:absolute;
+			width:100%;
+			z-index:1000;
+			display:none;
+		}
+		.loader {
+		  border: 10px solid #f3f3f3ce;
+		  border-radius: 50%;
+		  border-top: 10px solid #e012cf;
+		  width: 30px;
+		  height: 30px;
+		  margin-left:auto;
+		  margin-right:auto;
+		  margin-top:30%;
+		  -webkit-animation: spin 2s linear infinite; /* Safari */
+		  animation: spin 2s linear infinite;
+		}
+
+		/* Safari */
+		@-webkit-keyframes spin {
+		  0% { -webkit-transform: rotate(0deg); }
+		  100% { -webkit-transform: rotate(360deg); }
+		}
+
+		@keyframes spin {
+		  0% { transform: rotate(0deg); }
+		  100% { transform: rotate(360deg); }
+		}
+
+		@media (min-width:768px){
+			header.masthead{
+				padding-top:4rem;
+				padding-bottom:4rem;
+			}
+			header.masthead h1{
+				font-size:3rem;
+			}
+		}
+		.res-container{}
+		.result-box{width:90%;
+			margin-left:auto;
+			margin-right:auto;
+			height: 360px;
+			padding:10px;
+			overflow-y: auto;
+			box-shadow: 2px 2px 2px solid black;
+		}
+		#loading {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999999999;
+			overflow: hidden;
+			background: rgba(255, 255, 255, 0.637);
+		}
+		.loader {
+			border: 8px solid #f3f3f3c0;
+			border-top: 8px solid #f023e5;
+			border-radius: 50%;
+			width: 60px;
+			height: 60px;
+			left: 50%;
+			margin-left: -4em;
+			display: block;
+			animation: spin 2s linear infinite;
+		}
+		.loader,
+		.loader:after {
+			display: block;
+			position: absolute;
+			top: 50%;
+			margin-top: -4.05em;
+		}
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		.footer{position:absolute;bottom:0px;width:100%;}
+		#datafetch_form{padding:0px 40px;}
+		.json-result{}
+		.result-box p{text-align:left;}
+
+		.form-control {
+			display: block;
+			width: 96%;
+			height: calc(1.5em + .75rem + 2px);
+			padding: .375rem .75rem;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.5;
+			
+			background-color: rgb(248, 247, 247);
+			background-clip: padding-box;
+			border: 1px solid #ced4da;
+			border-radius: 5px;
+			box-shadow: 2px 2px 2px black;
+			transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+		}
+		
+	</style>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-light bg-light static-top">
+		<div class="container-fluid">
+			<span class="navbar-brand" >Wafer Fault Detection</span></div>
+	</nav>
+
+	<!-- Testimonials -->
+	<section class="testimonials text-center">
+		<div class="container-fluid">
+			<h4 class="my-4 title"></h4>
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<br/>
+					<form method="post" id="datafetch_form" enctype="multipart/form-data">
+						<div class="form-group files color">
+							<input type="text" name = "csvfile" id="csvfile" class="form-control" placeholder="Enter absolute file path." required>
+						</div>
+						<div class="pred_btn"><button class="bttn" style="background:rgb(7, 190, 1);border-radius:5px;
+							color: #000;
+							box-shadow: 0 2px 10px #080808;" >Custom File Predict</button></div>
+						<br/><center><b>Or</b></center><br/>
+						<button style="background:rgb(7, 190, 1);border-radius:5px;
+						color: #000;
+						box-shadow: 0 2px 10px #080808;" id="defaultfile" data-path = "Prediction_Batch_files">
+							Default File Predict
+						</button>
+					</form>
+				</div>
+				<div class="res-container  col-md-6 col-xs-12">
+					<div class="result-box shadow rounded-lg" style="box-shadow: 0 2px 10px #080808;">
+						<h6 class="title">Results</h6>
+						<div>
+						<div class="json-result">
+						</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>						
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-6 h-100 text-center my-auto mx-auto">
+					<ul class="list-inline mb-1">
+						<li class="list-inline-item"><a href="">About</a></li>
+						<li class="list-inline-item">&sdot;</li>
+						<li class="list-inline-item"><a href="">Contact</a></li>
+						<li class="list-inline-item">&sdot;</li>
+						<li class="list-inline-item"><a href="">Privacy Policy</a></li>
+					</ul>
+					<p class="text-muted small mb-2 mb-lg-0">&copy; 2021. All Rights Reserved.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	
+	<div id="loading"><div class="loader"></div></div>
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#loading').hide();
+			$("#customfile").click(function(e){
+				e.preventDefault();
+				$('#loading').show();
+				var path = $("#csvfile").val();
+				$.ajax({
+					//change url below
+					url : "/predict",
+					type: "POST",
+					data: {filepath:path},
+					success: function(response){
+						$(".json-result").html('<p>"Prediction File created at Prediction_Output_File/Predictions.csv and few of the predictions are"</p><pre>' + response + '</pre>');	
+						$('#loading').hide();
+					}
+				});
+			});
+			$("#defaultfile").click(function(e){
+				e.preventDefault();
+				$('#loading').show();
+				var path = $(this).attr("data-path");
+				$.ajax({
+					//change url below
+					url : "/predict",
+					type: "POST",
+					data: {filepath:path},
+					success: function(response){
+						$(".json-result").html('<p>"Prediction File created !!!</p><pre>' + response + '</pre>');
+						$('#loading').hide();
+					}
+				});
+				
+			});
+		});
+	</script>
+</body>
+
+</html>
